@@ -45,3 +45,23 @@ Repository to track development of RESTful web services
                 return "Hello World";
             }
         }</pre> <br>
+5. <strong>DispatcherServlet</strong> <br>
+    &emsp;a. Whenever in Spring MVC a request is received, it first goes to DispatcherServlet which is mapped to '/' URL. <br>
+    &emsp;b. This is called Front Controller Pattern. <br>
+    &emsp;c. After looking at request URL, DispatcherServlet maps the request to the right controller method. <br>
+    &emsp;d. Dispatcher Servlet is getting configured due to DispatcherServletAutoConfiguration. <br>
+    &emsp;e. DispatcherServletAutoConfiguration is part of AutoConfiguration which is one of the features of SpringBoot. <br><br>
+6.  <strong>Bean To JSON Conversion</strong> <br>
+    &emsp;a. The <em>@RestController</em> has <em>@ResponseBody</em> which causes response of method to be returned as-is. <br>
+    &emsp;b. When the message is returned, message conversion takes place based on configuration. <br>
+    &emsp;c. The default message converter set in SpringBoot is JacksonHttpMessageConverters. <br>
+    This is configured as  JacksonHttpMessageConvertersConfiguration which is part of SpringBoot AutoConfiguration. <br><br>
+7. <strong>Error Page</strong> <br>
+    The error page shown such as 404 error page is part of AutoConfiguration as ErrorMvcAutoConfiguration. <br><br>
+8. <strong>Starter Projects</strong> <br>
+    Spring Boot Starter Web provides dependencies such as: <br>
+    a. spring-webmvc <br>
+    b. spring-web <br>
+    c. spring-boot-starter-tomcat (Tomcat)<br>
+    d. spring-boot-starter-json (Jackson) <br><br>
+    <em>Note: Enable <em>debug</em> level logs to see all beans such as DispatcherServletAutoConfiguration created. <br><br>
