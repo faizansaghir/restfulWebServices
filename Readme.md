@@ -70,4 +70,10 @@ Repository to track development of RESTful web services
     this value is passed in URL and can be read in the Controller mapped method in Spring. <br>
     &emsp;b. <em>@PathVariable</em> is the annotation to tell Spring that a parameter of handler method is a path parameter. <br>
     <pre>Example:
-   </pre>
+        @RestController
+        public class HelloWorldController {
+            @GetMapping("/hello-world/path-variable/{name}")
+            public HelloWorldBean getHelloWorldPathVariable(@PathVariable String name){
+                return new HelloWorldBean(STR."Hello \{name}");
+            }
+        }</pre> <br>
