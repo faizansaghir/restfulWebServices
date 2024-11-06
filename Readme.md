@@ -64,4 +64,10 @@ Repository to track development of RESTful web services
     b. spring-web <br>
     c. spring-boot-starter-tomcat (Tomcat)<br>
     d. spring-boot-starter-json (Jackson) <br><br>
-    <em>Note: Enable <em>debug</em> level logs to see all beans such as DispatcherServletAutoConfiguration created. <br><br>
+    <em>Note: Enable <strong>debug</strong> level logs to see all beans such as DispatcherServletAutoConfiguration created. </em> <br><br>
+9. <strong>Path Parameter and @PathVariable</strong> <br>
+    &emsp;a. While requesting a resource in Rest API, clients sometimes need to pass an ID of the resource or some other value, 
+    this value is passed in URL and can be read in the Controller mapped method in Spring. <br>
+    &emsp;b. <em>@PathVariable</em> is the annotation to tell Spring that a parameter of handler method is a path parameter. <br>
+    <pre>Example:
+   </pre>
