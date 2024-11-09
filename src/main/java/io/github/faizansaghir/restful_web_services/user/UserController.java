@@ -2,7 +2,9 @@ package io.github.faizansaghir.restful_web_services.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -26,7 +28,12 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<User> postUser(@RequestBody User user){
-        service.save(user);
-        return ResponseEntity.created(null).build();
+        User savedUser = service.save(user);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(
+                        savedUser.getId()
+                ).toUri();
+        return ResponseEntity.created(location).build();
     }
 }
