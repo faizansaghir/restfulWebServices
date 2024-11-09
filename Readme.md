@@ -90,3 +90,6 @@ Repository to track development of RESTful web services
                 service.save(user);
             }
         }</pre> <br>
+12. <strong>ResponseEntity</strong> <br>
+    Class meant to represent the entire HTTP response. <br>
+    We can control anything that goes into it: status code, headers, and body. <br><br>
