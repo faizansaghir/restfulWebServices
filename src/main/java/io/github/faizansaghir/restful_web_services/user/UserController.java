@@ -23,7 +23,10 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable Integer id){
-        return service.findOne(id);
+        User user = service.findOne(id);
+        if(user==null)
+            throw new UserNotFoundException(STR."id:\{id}");
+        return user;
     }
 
     @PostMapping("/users")

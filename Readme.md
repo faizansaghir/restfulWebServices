@@ -93,3 +93,6 @@ Repository to track development of RESTful web services
 12. <strong>ResponseEntity</strong> <br>
     Class meant to represent the entire HTTP response. <br>
     We can control anything that goes into it: status code, headers, and body. <br><br>
+13. <strong>DevTools in Production</strong> <br>
+    We see the StackTrace in our HTML response when exception is thrown along with WhiteLabel error page due to DevTools. <br>
+    In production, this DevTools is automatically disabled even if it is part of the JAR file thus StackTrace is disabled. <br><br>
