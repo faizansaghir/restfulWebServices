@@ -77,3 +77,16 @@ Repository to track development of RESTful web services
                 return new HelloWorldBean(STR."Hello \{name}");
             }
         }</pre> <br>
+10. <strong>@PostMapping</strong> <br>
+    Annotation to tell Spring that a method is a POST handler for a given path. <br>
+    It is same as <em>@RequestMapping(method = {RequestMethod.POST})</em> <br><br>
+11. <strong>@RequestBody</strong> <br>
+    Annotation to tell Spring that request body is to be mapped to an instance of specified type. <br>
+    <pre>Example:
+        @RestController
+        public class UserController {
+            @PostMapping("/users")
+            public void postUser(@RequestBody User user){
+                service.save(user);
+            }
+        }</pre> <br>
