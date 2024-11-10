@@ -26,6 +26,7 @@ Repository to track development of RESTful web services
         }</pre> <br>
 3. <strong>@RequestMapping</strong> <br>
     Annotation to tell Spring that a method is a request mapping and will be executed when certain path is visited. <br>
+    The Controller class having @RequestMapping([pathString]) in class level, will have every mapping starting with /pathString. <br> 
     <pre>Example:
         @RestController
         public class HelloWorldController {
