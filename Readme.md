@@ -119,3 +119,15 @@ Repository to track development of RESTful web services
 
     <em>Note: The above handler method handles the exception of type UserNotFoundException</em>
    </pre> <br>
+15. <strong>@DeleteMapping</strong> <br>
+    Annotation to tell Spring that a method is a DELETE handler for a given path. <br>
+    It is same as <em>@RequestMapping(method = {RequestMethod.DELETE})</em> 
+    <pre>Example:
+        @RestController
+        public class UserController {
+    
+            @DeleteMapping("/users/{id}")
+            public void deleteUser(@PathVariable Integer id){
+                service.deleteById(id);
+            }
+        } </pre> <br>
