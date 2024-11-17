@@ -97,3 +97,25 @@ Repository to track development of RESTful web services
 13. <strong>DevTools in Production</strong> <br>
     We see the StackTrace in our HTML response when exception is thrown along with WhiteLabel error page due to DevTools. <br>
     In production, this DevTools is automatically disabled even if it is part of the JAR file thus StackTrace is disabled. <br><br>
+14. <strong>@ExceptionHandler</strong> <br>
+   Annotation to tell Spring that a method is handler when a particular exception type is thrown at run-time. <br>
+   <pre>Example:
+    @ControllerAdvice
+    public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+    
+        @ExceptionHandler(UserNotFoundException.class)
+        public final ResponseEntity&lt;ErrorDetails&gt; handleUserNotFoundException(UserNotFoundException ex, WebRequest request) throws Exception {
+    
+            ErrorDetails errorDetails = new ErrorDetails(
+                    LocalDateTime.now(),
+                    ex.getMessage(),
+                    request.getDescription(false)
+            );
+    
+            return new ResponseEntity&lt;&gt;(errorDetails, HttpStatus.NOT_FOUND);
+        }
+    
+    }
+
+    <em>Note: The above handler method handles the exception of type UserNotFoundException</em>
+   </pre> <br>
